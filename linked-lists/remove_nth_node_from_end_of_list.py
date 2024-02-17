@@ -1,8 +1,8 @@
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 class Solution:
     '''
     19: MEDIUM
@@ -10,7 +10,7 @@ class Solution:
     the nth node from the end of the list
     and return its head.
     '''
-    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    def removeNthFromEnd(self, head, n):
         # two pointer approach for a one-pass algorithm
         fast, slow = head, head
         for _ in range(n): fast = fast.next

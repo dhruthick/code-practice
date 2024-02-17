@@ -10,7 +10,7 @@ class Solution:
     Given head, the head of a linked list,
     determine if the linked list has a cycle in it.
     '''
-    def hasCycle(self, head: Optional[ListNode]) -> bool:
+    def hasCycle(self, head) -> bool:
         # Imagine two runners running on a track at different speed.
         # What happens when the track is actually a circle?
         if not head:
