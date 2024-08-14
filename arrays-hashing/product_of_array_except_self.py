@@ -17,15 +17,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        # compute product of all left numbers
-        answer = [1] * len(nums)
-        temp = 1
-        for i in range(1, len(nums)):
-            temp *= nums[i - 1]
-            answer[i] = temp
-        temp = 1
-        # multiply answer with product of all right numbers
-        for i in reversed(range(len(nums) - 1)):
-            temp *= nums[i + 1]
-            answer[i] *= temp
-        return answer
+        # time - O(n), space - O(n)
+        prefix_product = []
+        curr_product = 1
+        # compute prefix product
+        for num in nums:
+            prefix_product.append(curr_product)
+            curr_product *= num
+        curr_product = 1
+        # compute final product inplace
+        for i in range(len(nums) - 1, -1, -1):
+            num = nums[i]
+            nums[i] = curr_product * prefix_product[i]
+            curr_product *= num
+        return nums

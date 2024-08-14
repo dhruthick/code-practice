@@ -24,7 +24,7 @@ class Solution(object):
         # #         new_string += c
         # # return ''.join(reversed(list(new_string))) == new_string
 
-        # Use two pointers and move towards the middle - O(1) space complexity
+        # Use two pointers and move towards the middle - O(1) space complexity. time - O(n)
         left, right = 0, len(s) - 1
         while left < right:
             while left < right and not s[left].isalnum():

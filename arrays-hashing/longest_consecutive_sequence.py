@@ -14,6 +14,7 @@ class Solution(object):
 
         # convert the list to set (Hashset) 
         # O(1) lookups in sorted manner is then possible
+        # time - O(n), space - O(n)
         nums = set(nums)
         answer = 0
         for n in nums:
