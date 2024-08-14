@@ -15,6 +15,7 @@ class Solution(object):
     Return the head of the merged linked list.
     '''
     def mergeTwoLists(self, list1, list2):
+        # time - O(n + m), space - O(1)
         dummy = curr = ListNode()
         
         while list1 and list2:

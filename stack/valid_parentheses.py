@@ -11,14 +11,12 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        match = {
-            '{':'}','[':']','(':')'
-        }
+        # time - O(n), space - O(n)
         stack = []
-        for b in s:
-            if b in ['{','(','[']:
-                stack.append(b)
-            else:
-                if len(stack) == 0 or match[stack.pop()] != b:
-                    return False
+        bracket_map = {'{':'}','[':']','(':')'}
+        for bracket in s:
+            if bracket in ['{','[','(']:
+                stack.append(bracket)
+            elif not stack or bracket_map[stack.pop()] != bracket:
+                return False
         return not stack

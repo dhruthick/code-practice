@@ -9,6 +9,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        # time - O(logn), space - O(1)
         if len(nums) == 1:
             return nums[0]
         left, right = 0, len(nums) - 1

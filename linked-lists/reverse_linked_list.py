@@ -15,15 +15,12 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        if not head:
-            return head
-        left = None
+        # time - O(n), space - O(1)
         curr = head
-        right = head.next
-        while right:
-            curr.next = left
-            left = curr
-            curr = right
-            right = right.next
-        curr.next = left
-        return curr
+        prev = None
+        while curr:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+        return prev
