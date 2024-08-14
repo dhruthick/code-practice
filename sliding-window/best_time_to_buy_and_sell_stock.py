@@ -17,14 +17,10 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
-        # set first price to minimum
-        minp = prices[0]
+        # time - O(n), space - O(1)
         profit = 0
-        for p in prices:
-            # change minimum when the price is lower
-            if minp > p:
-                minp = p
-            # otherwise compute profit and update max
-            elif minp < p:
-                profit = max(profit, p - minp)
+        min_so_far = float('inf')
+        for price in prices:
+            min_so_far = min(min_so_far, price)
+            profit = max(price - min_so_far, profit)
         return profit

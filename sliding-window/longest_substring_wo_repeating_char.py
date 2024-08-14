@@ -9,6 +9,7 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+        # time - O(n), space - O(1)
         seen = {}
         maxlen = 0
         # initialize sliding window

@@ -17,18 +17,15 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        from collections import defaultdict
-        # sliding window
-        left, right = 0, 0
-        # dictionary to track character frequency
-        count = defaultdict(int)
-        maxlen = 0
+        counter = collections.Counter(s[:k])
+        left, right = 0, k
+        max_len = k
+        # time - O(n), space - O(m), m = 26
         while right < len(s):
-            count[s[right]] += 1
-            if max(count.values()) + k >= right - left + 1:
-                maxlen = max(maxlen, right - left + 1)
-            else:
-                count[s[left]] -= 1
+            counter[s[right]] += 1
+            if right - left + 1 - max(counter.values()) > k:
+                counter[s[left]] -= 1
                 left += 1
+            max_len = max(max_len, right - left + 1)
             right += 1
-        return maxlen
+        return max_len

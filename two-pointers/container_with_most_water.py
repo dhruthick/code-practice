@@ -11,15 +11,14 @@ class Solution(object):
         :type height: List[int]
         :rtype: int
         """
-        # Two pointers approach
-        # Move the pointer with the shorter height
+        # shrink pointers from either end according to highest height
+        # time - O(n), space - O(1)
         left, right = 0, len(height) - 1
-        max_area = 0
+        max_volume = 0
         while left < right:
-            area = min(height[left], height[right]) * (right - left)
-            max_area = max(max_area, area)
-            if height[left] <= height[right]:
-                left += 1
-            else:
+            max_volume = max(max_volume, (right - left) * min(height[left], height[right]))
+            if height[left] > height[right]:
                 right -= 1
-        return max_area
+            else:
+                left += 1
+        return max_volume
