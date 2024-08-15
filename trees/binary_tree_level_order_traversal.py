@@ -16,6 +16,7 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[List[int]]
         """
+        # time - O(n), space - O(n)
         if not root:
             return []
         res = []

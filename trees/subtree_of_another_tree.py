@@ -18,6 +18,7 @@ class Solution(object):
         :type subRoot: TreeNode
         :rtype: bool
         """
+        # time - O(mn), space O(m + n)
         # use the solution for SAME TREE
         def traverse_trees(root1, root2):
             if not root1 and not root2:

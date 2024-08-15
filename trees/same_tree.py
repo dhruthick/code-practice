@@ -17,13 +17,11 @@ class Solution(object):
         :type q: TreeNode
         :rtype: bool
         """
-        def traverse_trees(root1, root2):
-            if not root1 and not root2:
-                return True
-            if not root1 or not root2:
-                return False
-            if root1.val != root2.val:
-                return False
-            return traverse_trees(root1.right, root2.right) and traverse_trees(root1.left, root2.left)
-        return traverse_trees(p, q)
+        # time - O(n), space - O(n) (worst case)
+        if not p and not q:
+            return True
+        if not p or not q:
+            return False
+        return p.val == q.val and self.isSameTree(p.left, q.left) and\
+        self.isSameTree(p.right, q.right)
         

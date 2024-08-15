@@ -14,10 +14,8 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        def height(node):
-            if node==None:
-                return 0
-            return 1 + max(height(node.left), height(node.right))
-        
-        return height(root)
+        # time - O(n), space - O(logn), worst case O(n)
+        if not root:
+            return 0
+        return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
         

@@ -18,15 +18,13 @@ class Solution(object):
         :type q: TreeNode
         :rtype: TreeNode
         """
+        # time - O(n), space - O(1)
         node = root
-        while True:
-            if p.val > node.val and q.val < node.val:
-                return node
-            elif p.val < node.val and q.val > node.val:
-                return node
-            elif p.val == node.val or q.val == node.val:
-                return node
-            elif p.val < node.val:
+        while node:
+            if node.val > p.val and node.val > q.val:
                 node = node.left
-            else:
+            elif node.val < p.val and node.val < q.val:
                 node = node.right
+            else:
+                return node
+        return None
