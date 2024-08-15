@@ -13,6 +13,8 @@ class Solution:
     def hasCycle(self, head) -> bool:
         # Imagine two runners running on a track at different speed.
         # What happens when the track is actually a circle?
+
+        # time - O(n), space - O(1)
         if not head:
             return False 
 

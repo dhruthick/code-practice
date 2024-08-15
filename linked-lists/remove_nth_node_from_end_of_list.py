@@ -12,6 +12,7 @@ class Solution:
     '''
     def removeNthFromEnd(self, head, n):
         # two pointer approach for a one-pass algorithm
+        # time - O(n), space - O(1)
         fast, slow = head, head
         for _ in range(n): fast = fast.next
         if not fast: return head.next

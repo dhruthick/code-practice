@@ -19,6 +19,7 @@ class Solution(object):
         :type head: ListNode
         :rtype: None Do not return anything, modify head in-place instead.
         """
+        # time - O(n), space - O(1)
         if not head:
             return 
         
