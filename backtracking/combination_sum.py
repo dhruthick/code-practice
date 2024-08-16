@@ -13,6 +13,10 @@ class Solution:
     the chosen numbers is different.
     '''
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        # n - number of candidates, t - target, m - minimal value candidate
+        # time - O(n^(t/m + 1)), n-ary tree with height t/m
+        # space - O(t/m)
+
         def find_combinations(combination, sum_left, start):
             if sum_left == 0:
                 nonlocal answer
@@ -20,6 +24,7 @@ class Solution:
                 return
             if sum_left < 0:
                 return
+            # pick all you want of the number now. no backsies.
             for i in range(start, len(candidates)):
                 find_combinations(combination + [candidates[i]], sum_left - candidates[i], i)
         answer = []

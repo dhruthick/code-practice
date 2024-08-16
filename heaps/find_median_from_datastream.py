@@ -11,7 +11,7 @@ elements so far.
 
 import heapq
 class MedianFinder:
-
+    # time - O(logn), space - O(1)
     def __init__(self):
         self.low = []
         self.high = []        

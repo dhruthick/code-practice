@@ -10,22 +10,16 @@ class Solution(object):
     Given the root of a binary tree,
     determine if it is a valid binary search tree (BST).
     '''
-    def isValidBST(self, root):
-        """
-        :type root: TreeNode
-        :rtype: bool
-        """
-        import math
-        global tracker
-        tracker = float('-inf')
-        def inorder(node):
-            global tracker
-            if not node:
-                return True
-            if not inorder(node.left): return False
-            if node.val <= tracker:
-                return False
-            tracker = node.val
-            return inorder(node.right)
-        return inorder(root)
+    # time and space - O(n)
+    def __init__(self):
+        self.prev = - float('inf')
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        if not root:
+            return True
+        if not self.isValidBST(root.left): return False
+        if root.val <= self.prev:
+            return False
+        self.prev = root.val
+        if not self.isValidBST(root.right): return False
+        return True
         

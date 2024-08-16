@@ -19,6 +19,7 @@ class Solution(object):
         :rtype: int
         """
         # ierative inorder traversal until the kth element
+        # time - O(h + k), space - O(h)
         stack = []
         while True:
             while root:

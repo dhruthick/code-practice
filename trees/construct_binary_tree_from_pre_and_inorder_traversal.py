@@ -19,22 +19,22 @@ class Solution(object):
         :type inorder: List[int]
         :rtype: TreeNode
         """
-        # preorder's first index giver root
-        # root's index in inorder givex left and right subtree
-        def build(left, right):
-            nonlocal rootIndex
-            if left > right:
-                return None
-            rootValue = preorder[rootIndex]
-            root = TreeNode(rootValue)
-            rootIndex += 1
-            # left HAS TO be assigned before right
-            root.left = build(left, index_map[rootValue] - 1)
-            root.right = build(index_map[rootValue] + 1, right)
-            return root
-        rootIndex = 0
-        index_map = {}
-        for i in range(len(inorder)):
-            index_map[inorder[i]] = i
-        return build(0, len(preorder) - 1)
+        # time and space - O(n)
+    def build_tree(self, left, right):
+        if left > right:
+            return None
+        rootval = self.preorder[self.root_index]
+        self.root_index += 1
+        root = TreeNode(rootval)
+        root.left = self.build_tree(left, self.index_map[rootval] - 1)
+        root.right = self.build_tree(self.index_map[rootval] + 1, right)
+        return root
+
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        self.preorder = preorder
+        self.index_map = {}
+        for i, val in enumerate(inorder):
+            self.index_map[val] = i
+        self.root_index = 0
+        return self.build_tree(0, len(preorder) - 1)
        

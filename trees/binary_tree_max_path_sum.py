@@ -14,6 +14,7 @@ class Solution:
     the maximum path sum of any non-empty path.
     '''
     def maxPathSum(self, root: TreeNode) -> int:
+        # time and space - O(n)
         
         # post order traversal
         def subTreeGain(root):

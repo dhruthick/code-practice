@@ -6,6 +6,7 @@
 #         self.right = None
 
 class Codec:
+    # time and space - O(n)
     '''
     297: HARD
     Design an algorithm to serialize and deserialize a binary tree.
