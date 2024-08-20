@@ -11,6 +11,10 @@ class Solution:
     letter cell may not be used more than once.
     '''
     def exist(self, board: List[List[str]], word: str) -> bool:
+        # l - length of word
+        # n - dimension of board
+        # time - O(n * 3^l)
+        # space - O(l)
         row_length, col_length = len(board), len(board[0])
 
         
@@ -22,7 +26,7 @@ class Solution:
             if row < 0 or row == row_length or col < 0 or col == col_length \
                     or board[row][col] != letters_left[0]:
                 return False
-
+            # use the board itself to track instead of extra space
             board[row][col] = '*'
             for r_offset, c_offset in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
                 if find_word(row + r_offset, col + c_offset, letters_left[1:]):

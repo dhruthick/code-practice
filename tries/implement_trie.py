@@ -28,6 +28,7 @@ class Trie:
         self.root = TrieNode()
 
     def insert(self, word: str) -> None:
+        # time - O(n), space - O(n)
         cur = self.root
         # Insert character by character into trie
         for c in word:
@@ -39,6 +40,7 @@ class Trie:
         
 
     def search(self, word: str) -> bool:
+        # time - O(n), space - O(1)
         cur = self.root
         # Search character by character in trie
         for c in word:
@@ -50,6 +52,7 @@ class Trie:
         
 
     def startsWith(self, prefix: str) -> bool:
+        # time - O(n), space - O(1)
         # Same as search, except there is no isEnd condition at final return
         cur = self.root
         for c in prefix:

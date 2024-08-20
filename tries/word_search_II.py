@@ -13,6 +13,13 @@ class Solution:
     a word.
     '''
     def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
+        # M - number of cells on the board
+        # L - maximum length of a word
+        # N - number of non overlapping letters in all words (size of trie)
+        # time - O(M * 4 * 3^(L - 1))
+        # space - O(N) 
+
+
         # build trie for the given words
         word_key = '#'
         trie = {}

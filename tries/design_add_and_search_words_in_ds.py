@@ -26,6 +26,7 @@ class WordDictionary:
         
 
     def addWord(self, word: str) -> None:
+        # time O(n), space - O(n)
         curr = self.root
         for c in word:
             if c not in curr.children:
@@ -34,6 +35,7 @@ class WordDictionary:
         curr.isEnd = True
 
     def search(self, word: str) -> bool:
+        # time O(n * 26 ^ m), m - number of dots, space - O(m)
         def backtrack_search(word, node):
             for i, c in enumerate(word):
                 if c not in node.children:

@@ -12,6 +12,7 @@ class Solution:
     all surrounded by water.
     '''
     def numIslands(self, grid: List[List[str]]) -> int:
+        # time and space - O(mn)
         nRows, nCols = len(grid), len(grid[0])
         
         def dfs(row, col):
