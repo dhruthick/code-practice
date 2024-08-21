@@ -16,6 +16,7 @@ class Solution(object):
         :rtype: int
         """
         from collections import defaultdict
+        # time and space - O(v + e)
 
         visited = set()
 

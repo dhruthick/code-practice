@@ -16,7 +16,7 @@ class Solution:
     '''
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         # need to detect if the graph is acyclic
-
+        # time and space - O(m + n)
         # topological sorting using kahn's algorithm
         indegree = [0] * numCourses
         adj = [[] for _ in range(numCourses)]
@@ -61,7 +61,7 @@ class Solution:
         #         return True
             
         #     visited.add(crs)
-        #     # recursively explore each neighbouting path.
+        #     # recursively explore each neighbouring path.
         #     for n in al[crs]:
         #         if not dfs(n): return False
         #     visited.remove(crs)

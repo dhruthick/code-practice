@@ -29,6 +29,7 @@ class Solution:
         # intuition: instead of doing dfs/bfs on every cell, 
         # do it only on the edges connected to the ocean
 
+        # time and space - O(mn)
         pacific_cells = []
         atlantic_cells = []
         m, n = len(heights), len(heights[0])

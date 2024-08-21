@@ -21,6 +21,7 @@ class Solution(object):
         """
 
         from collections import defaultdict
+        # time and space - O(v + e)
         adj_list = defaultdict(list)
         for u, v in edges:
             adj_list[u].append(v)

@@ -19,6 +19,7 @@ class Solution:
     def __init__(self):
         self.visited = {}
     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
+        # time - O(n + m), space - O(n)
         if not node:
             return node
 
