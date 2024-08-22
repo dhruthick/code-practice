@@ -6,6 +6,7 @@ class Solution:
     def longestPalindrome(self, s: str) -> str:
         res = ""
         resLen = 0
+        # time - O(n^2), space - O(1)
 
         for i in range(len(s)):
             l, r = i, i

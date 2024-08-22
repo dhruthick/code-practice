@@ -21,6 +21,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        # time and space - O(n)
         memo = {}
         # top-down approach
         def dp(i):

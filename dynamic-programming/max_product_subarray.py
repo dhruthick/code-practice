@@ -7,12 +7,14 @@ class Solution:
     The test cases are generated so that the answer will fit in a 32-bit integer.
     '''
     def maxProduct(self, nums: List[int]) -> int:
-        mx = nums.copy()
-        mn = nums.copy()
-
+        # time - O(n), space - O(1)
+        max_so_far = nums[0]
+        min_so_far = nums[0]
+        answer = max_so_far
         for i in range(1, len(nums)):
-            mx[i] = max(nums[i], nums[i] * mx[i-1], nums[i] * mn[i-1])
-            mn[i] = min(nums[i], nums[i] * mx[i-1], nums[i] * mn[i-1])
-        
-        return max(mx)
+            temp_max = max(nums[i], max_so_far * nums[i], min_so_far * nums[i])
+            min_so_far = min(nums[i], max_so_far * nums[i], min_so_far * nums[i])
+            max_so_far = temp_max
+            answer = max(answer, max_so_far)
+        return answer
         

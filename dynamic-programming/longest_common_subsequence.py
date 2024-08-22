@@ -14,6 +14,7 @@ class Solution:
     '''
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         # mem = {}
+        # time and space - O(mn)
         @lru_cache(maxsize=None)
         def memo(t1, t2):
             # base case: if either's an empty string --> zero common subsequence

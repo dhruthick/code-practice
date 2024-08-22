@@ -13,6 +13,7 @@ class Solution:
     alerting the police.
     '''
     # use house robber I solution
+    # time and space - O(n)
     def robber(self, nums: List[int]) -> int:
             if len(nums) == 1:
                 return nums[0]

@@ -8,23 +8,20 @@ class Solution:
     Note that the same word in the dictionary may be reused 
     multiple times in the segmentation.
     '''
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        min_len = min([len(w) for w in wordDict])
-        @lru_cache(None)
-        def check_sentence(sent):
-            # base cases
-            if len(sent) == 0:
+    # time - O(nmk), n - len(s), m - len(wordDict), k - avg. lenght of word
+    # space - O(n)
+    @lru_cache(None)
+    def backtrack(self, string_left):
+        if not string_left:
+            return True
+        for w in self.words:
+            if string_left[:len(w)] == w and self.backtrack(string_left[len(w):]):
                 return True
-            if len(sent) < min_len:
-                return False
-            # iterable recurrence relation
-            for word in wordDict:
-                if len(sent) >= len(word) and sent[:len(word)] == word:
-                    if check_sentence("" if len(word) == len(sent) else sent[len(word):]):
-                        return True
-            return False
-            
-        return check_sentence(s)
+        return False
+    
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        self. words = wordDict
+        return self.backtrack(s)
 
         
 

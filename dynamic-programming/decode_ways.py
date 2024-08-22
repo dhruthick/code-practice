@@ -25,6 +25,7 @@ class Solution:
     a 32-bit integer.
     '''
     def numDecodings(self, s: str) -> int:
+        # time and space - O(n)
         @lru_cache(None)
         def dp(ind):
             if ind == len(s):

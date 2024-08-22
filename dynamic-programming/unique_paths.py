@@ -12,16 +12,20 @@ class Solution:
     The test cases are generated so that the answer will be less than or 
     equal to 2 * 109.
     '''
+    # time and space - O(mn)
+    @lru_cache(None)
+    def backtrack(self, i, j):
+        if i == self.m - 1 and j == self.n - 1:
+            return 1
+        num_ways = 0
+        for x, y in [(0, 1), (1, 0)]:
+            nx, ny = i + x, j + y
+            if 0 <= nx < self.m and 0 <= ny < self.n:
+                num_ways += self.backtrack(nx, ny)
+        return num_ways
+    
     def uniquePaths(self, m: int, n: int) -> int:
+        self.m = m
+        self.n = n
 
-        @lru_cache(None)
-        def dp(i, j):
-            if i == m - 1 and j == n - 1:
-                return 1
-            if i == m - 1:
-                return dp(i, j + 1)
-            if j == n - 1:
-                return dp(i + 1, j)
-            return dp(i + 1, j) + dp(i, j + 1)
-        
-        return dp(0, 0)
+        return self.backtrack(0, 0)

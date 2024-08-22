@@ -7,6 +7,8 @@ class Solution:
 
     A substring is a contiguous sequence of characters within the string.
     '''
+
+    # time - O(n^2), space - O(1)
     def countSubstrings(self, s: str) -> int:
         res = 0 
 

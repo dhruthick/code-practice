@@ -13,6 +13,8 @@ class Solution:
     kind of coin.
     '''
     def coinChange(self, coins: List[int], amount: int) -> int:
+        # time - O(amount * n)
+        # space - O(amount)
         @lru_cache(None)
         def min_denom(amt):
             # base cases

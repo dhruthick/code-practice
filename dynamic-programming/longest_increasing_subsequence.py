@@ -5,6 +5,8 @@ class Solution:
     subsequence
     '''
     def lengthOfLIS(self, nums: List[int]) -> int:
+        # time - O(n^2), space - O(n)
+        # better solution exists with binary search, time - O(nlogn)
         dp = [1] * len(nums)
 
         for i in range(1, len(nums)):

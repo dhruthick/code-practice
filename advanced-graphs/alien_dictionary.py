@@ -25,6 +25,8 @@ class Solution(object):
         :rtype: str
         """
         # Leetcode's solution
+        # time - O(C),  C - sum(length of word)
+        # space - O(1), 26 letters in alphabet
 
         # Step 0: create data structures + the in_degree of each unique letter to 0.
         adj_list = defaultdict(set)

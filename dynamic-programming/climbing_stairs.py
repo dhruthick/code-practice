@@ -13,6 +13,7 @@ class Solution(object):
         :rtype: int
         """
         # top-down approach with recursion and hashmap
+        # time and space - O(n)
         def dp(i):
             # base case
             if i <= 2:
