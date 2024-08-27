@@ -8,6 +8,7 @@ class Solution:
     Return true if you can reach the last index, or false otherwise.
     '''
     def canJump(self, nums: List[int]) -> bool:
+        # time - O(n), space - O(1)
         g = len(nums) - 1
         # start from the end
         for i in range(len(nums) - 1, -1, -1):

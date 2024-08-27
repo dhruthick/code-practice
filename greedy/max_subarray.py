@@ -5,6 +5,7 @@ class Solution:
     the largest sum, and return its sum.
     '''
     def maxSubArray(self, nums: List[int]) -> int:
+        # time - O(n), space - O(1)
         # kadane's algorithm
         ans = nums[0]
         max_so_far = nums[0]

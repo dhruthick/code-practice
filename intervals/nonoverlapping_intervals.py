@@ -6,6 +6,7 @@ class Solution:
     of the intervals non-overlapping.
     '''
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
+        # time - O(nlogn), space - O(n) (sorting)
         # sort by end of intervals
         intervals.sort(key = lambda x: x[1])
         count = 0

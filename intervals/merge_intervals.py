@@ -7,6 +7,7 @@ class Solution:
     input.
     '''
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        # time - O(nlogn), space - O(n) (sorting)
         intervals.sort()
         result = []
         n, i = len(intervals), 0

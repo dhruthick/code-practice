@@ -17,6 +17,7 @@ class Solution:
     a new array and return it.
     '''
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+        # time - O(n), space - O(1)
         answer = []
         new_start, new_end = newInterval[0], newInterval[1]
         n, i = len(intervals), 0
