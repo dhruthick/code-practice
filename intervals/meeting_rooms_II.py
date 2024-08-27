@@ -5,6 +5,7 @@ class Solution:
     return the minimum number of conference rooms required.
     '''
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        # time - O(nlogn), space - O(n) 
         # use min heap to keep track of rooms
         from heapq import heappush, heappop
         if not intervals:

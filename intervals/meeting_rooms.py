@@ -5,6 +5,7 @@ class Solution:
     determine if a person could attend all meetings.
     '''
     def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
+        # time - O(nlogn), space - O(n) (sorting)
         intervals.sort(key = lambda x : x[1])
         last_end = - float('inf')
         for start, end in intervals:
